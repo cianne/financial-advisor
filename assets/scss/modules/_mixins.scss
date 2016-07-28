@@ -1,0 +1,172 @@
+// The micro clearfix http://nicolasgallagher.com/micro-clearfix-hack
+@mixin clearfix(){
+	*zoom:1;
+
+	&:before,
+	&:after{
+	    content:"";
+	    display:table;
+	}
+	&:after{
+	    clear:both;
+	}
+}
+
+// Transition Mixin
+@mixin transition($transition-property, $transition-time, $method) {
+	-webkit-transition: $transition-property $transition-time $method;
+	-moz-transition: $transition-property $transition-time $method;
+	-ms-transition: $transition-property $transition-time $method;
+	-o-transition: $transition-property $transition-time $method;
+	transition: $transition-property $transition-time $method;
+}
+
+// CSS3 Mixin
+@mixin css3($property, $value) {
+	 @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {
+		  #{$prefix}#{$property}: $value;
+	 }
+}
+
+// Border Radius Mixin
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius;
+	border-radius: $radius;
+	background-clip: padding-box;  /* stops bg color from leaking outside the border: */
+}
+
+// Single side border-radius
+@mixin border-top-radius($radius) {
+	-webkit-border-top-right-radius: $radius;
+	border-top-right-radius: $radius;
+	-webkit-border-top-left-radius: $radius;
+	border-top-left-radius: $radius;
+	background-clip: padding-box;
+}
+
+@mixin border-right-radius($radius) {
+	-webkit-border-bottom-right-radius: $radius;
+	border-bottom-right-radius: $radius;
+	-webkit-border-top-right-radius: $radius;
+	border-top-right-radius: $radius;
+	background-clip: padding-box;
+}
+
+@mixin border-bottom-radius($radius) {
+	-webkit-border-bottom-right-radius: $radius;
+	border-bottom-right-radius: $radius;
+	-webkit-border-bottom-left-radius: $radius;
+	border-bottom-left-radius: $radius;
+	background-clip: padding-box;
+}
+
+@mixin border-left-radius($radius) {
+	-webkit-border-bottom-left-radius: $radius;
+	border-bottom-left-radius: $radius;
+	-webkit-border-top-left-radius: $radius;
+	border-top-left-radius: $radius;
+	background-clip: padding-box;
+}
+
+@mixin btn( $type: "flat", $background: $body_color, $radius: 0px, $padding: 15px 20px, $border: 1px) {
+    // @include css3(border-radius, $radius);
+    color: #fff;
+	display: inline-block;
+	line-height: 1;
+	padding: $padding;
+    @if $type == 'flat' {
+        background: $background;
+        &:hover {
+            background: lighten($background, 10);
+            // background: $link;
+        }
+        &:active {
+            background: lighten($background, 20);
+            // background: $link;
+        }
+    }
+	@if $type == 'rounded' {
+		background: $background;
+		border-radius: $radius;
+        &:hover {
+            background: lighten($background, 10);
+            // background: $link;
+        }
+        &:active {
+            background: lighten($background, 20);
+            // background: $link;
+        }
+	}
+    @if $type == 'border' {
+        background: rgba(0,0,0,0);
+        border: $border solid $background;
+        color: $background;
+        &:hover {
+            background: $background;
+            color:$light_color;
+        }
+        &:active {
+            background: lighten($background, 10);
+        }
+    }
+}
+
+// Media Query Mixin http://davidwalsh.name/write-media-queries-sass
+@mixin legacy {
+	@media (max-width: #{$legacy-width - 1px}) {
+		@content;
+	}
+}
+
+@mixin mobile {
+	@media (max-width: #{$mobile-width - 1px}) {
+		@content;
+	}
+}
+
+@mixin tablet {
+	@media (max-width: #{$tablet-width - 1px}) {
+		@content;
+	}
+}
+
+@mixin desktop {
+	@media (max-width: #{$desktop-width - 1px}) {
+		@content;
+	}
+}
+
+@mixin screen {
+	@media (min-width: #{$mobile-width}) {
+		@content;
+	}
+}
+
+@mixin largescreen() {
+	@media (min-width: #{$largescreen-width}) {
+		@content;
+	}
+}
+
+// Ensure grid columns are set to border-boxes. This is essential
+@mixin border-box(){
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+// REM mixin with pixel fallback
+@mixin rem($font-size: $base-font-size, $property: "font-size") {
+	#{$property}: strip_unit($font-size) * 1px;
+	#{$property}: strip_unit($font-size/10) * 1rem;
+}
+
+@mixin fa($icon) {
+	@include fa-icon();
+	@extend .#{$fa-css-prefix}-#{$icon};
+}
+
+@mixin octicon($icon) {
+	@extend .octicon;
+	@extend .octicon-#{$icon};
+}

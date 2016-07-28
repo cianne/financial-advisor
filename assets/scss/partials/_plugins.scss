@@ -1,0 +1,63 @@
+/** Plugins
+----------------------------------------------------------------------------- */
+/** Facebook Like Box */
+#fb-root {
+	display: none;
+}
+
+.fb_iframe_widget {
+	width: 100% !important;
+	span {
+		width: 100% !important;
+		iframe[style] {
+			width: 100% !important;
+		}
+	}
+}
+
+/** Gravity Forms **/
+.gform_wrapper {
+	max-width: 100% !important;
+	.top_label {
+		input {
+			&.medium {
+				padding: 6px 10px !important;
+				@include mobile {
+					width: 100% !important;
+				}
+			}
+		}
+	}
+	li {
+		margin-bottom: $half_gutter;
+		form & {
+			margin-bottom: $half_gutter;
+		}
+	}
+	textarea {
+		max-width: 100%;
+		padding: 6px 10px !important;
+	}
+}
+
+/** Ninja Forms **/
+.ninja-forms-form-wrap {
+	.ninja-forms-req-symbol {
+		color: $grapefruit !important;
+	}
+	label {
+		font-weight: inherit;
+		.ninja-forms-req-symbol {
+			strong {
+				color: $grapefruit !important;
+			}
+		}
+	}
+	input {
+		height: 38px !important;
+	}
+
+	input[type="submit"] {
+		height: auto !important;
+	}
+}

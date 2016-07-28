@@ -1,0 +1,8 @@
+/** Search Form
+----------------------------------------------------------------------------- */
+.search-form {
+	margin-bottom: 0;
+	input[type="submit"] {
+		@extend %clip;
+	}
+}

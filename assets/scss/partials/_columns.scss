@@ -1,0 +1,42 @@
+/** Column Classes
+----------------------------------------------------------------------------- */
+.one-half, .three-sixths, .two-fourths {
+	@include column(6);
+}
+
+.one-third, .two-sixths {
+	@include column(4);
+}
+
+.four-sixths, .two-thirds {
+	@include column(8);
+}
+
+.one-fourth {
+	@include column(3);
+}
+
+.three-fourths {
+	@include column(9);
+}
+
+.one-sixth {
+	@include column(2);
+}
+
+.five-sixths {
+	@include column(10);
+}
+
+.first {
+	@include first;
+}
+
+@include mobile {
+	.one-half, .three-sixths, .two-fourths, .one-third, .two-sixths, .four-sixths, .two-thirds, .one-fourth, .three-fourths, .one-sixth, .five-sixths {
+		@include column(12);
+		margin: {
+			bottom: $col_margin;
+		}
+	}
+}

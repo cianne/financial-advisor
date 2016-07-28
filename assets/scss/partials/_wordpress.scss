@@ -1,0 +1,85 @@
+/** WordPress Stylesheet
+----------------------------------------------------------------------------- */
+/** WYSIWYG Editor Styles */
+.alignleft {
+    float: left;
+    margin:0 $col_margin $col_margin 0;
+}
+
+.aligncenter {
+    display: block;
+    margin: 0 auto $col_margin auto;
+}
+
+.alignright {
+    float: right;
+    margin:0 0 $col_margin $col_margin;
+}
+
+.alignnone {
+    float: none;
+    display: block;
+    margin: 0 0 $col_margin 0;
+}
+
+.size-full {
+    width: 100%;
+    height: auto;
+    margin: 0 0 $col_margin 0;
+}
+
+.wp-caption {
+    max-width: 100%;
+    text-align: center;
+    padding: $col_margin/3;
+    border: 1px solid $grey_regular;
+    background: $grey_light;
+    img {
+        border: 0 none;
+        padding: 0;
+        margin: 0;
+        margin-bottom: $col_margin/3;
+    }
+    .wp-caption-text {
+        @include rem(14px);
+        margin: {
+            bottom: 0;
+        }
+
+    }
+}
+
+.wp-smiley {
+    margin: 0 !important;
+    max-height: 16px;
+}
+
+/** Blockquotes */
+blockquote {
+    &.left {
+        margin-right: $col_margin;
+        text-align: right;
+        margin-left: 0;
+        width: 33%;
+        float: left;
+    }
+    &.right {
+        margin-left: $col_margin;
+        text-align: left;
+        margin-right: 0;
+        width: 33%;
+        float: right;
+    }
+}
+
+/** Gallery */
+.gallery {
+    overflow: hidden;
+    img {
+        border: none !important;
+    }
+    .gallery-caption {
+        @include rem(14px);
+        line-height: 1.2;
+    }
+}

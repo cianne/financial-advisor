@@ -1,0 +1,29 @@
+{
+  "name": "financial",
+  "version": "1.0.0",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "https://webdevsuperfast@bitbucket.org/webdevsuperfast/starter-for-genesis.git"
+  },
+  "author": "RecommendWP",
+  "license": "ISC",
+  "dependencies": {
+    "del": "^1.1.1",
+    "gulp": "^3.8.11",
+    "gulp-autoprefixer": "^2.2.0",
+    "gulp-cache": "^0.2.9",
+    "gulp-compass": "^2.0.4",
+    "gulp-concat": "^2.5.2",
+    "gulp-csso": "^1.0.0",
+    "gulp-imagemin": "^2.2.1",
+    "gulp-jshint": "^1.10.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.2.0",
+    "gulp.spritesmith": "^3.5.4"
+  },
+  "devDependencies": {
+    "gulp-clean-css": "^2.0.11"
+  }
+}

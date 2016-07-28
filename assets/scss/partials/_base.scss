@@ -1,0 +1,478 @@
+/** Clearing Floats
+----------------------------------------------------------------------------- */
+.archive-pagination, .clearfix, .entry-pagination, .footer-widgets, .nav-primary, .nav-secondary, .site-container, .site-footer, .site-header, .site-inner, .wrap {
+    @include clearfix();
+}
+
+/** Box Sizing
+----------------------------------------------------------------------------- */
+*, *:before, *:after, input[type="search"] {
+	// box-sizing: inherit;
+	@include box-sizing(border-box);
+}
+
+/* html {
+	@include box-sizing(border-box);
+} */
+
+/** Base Defaults
+----------------------------------------------------------------------------- */
+html {
+	font-size: 62.5%;
+	visibility: hidden;
+}
+
+html, body.pushy-active {
+	overflow-x: hidden;
+    height: 100%;
+}
+
+::-moz-selection {
+    background: $select;
+    color: $select_color;
+    text-shadow: none;
+}
+
+
+::selection {
+    background: $select;
+    color: $select_color;
+    text-shadow: none;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid $grey_regular;
+    margin: 1em 0;
+    padding: 0;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/** Typography
+----------------------------------------------------------------------------- */
+body {
+	background-color: $light_color;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-size-adjust: 100%;
+	color: $body_color;
+	font-family: $body_family;
+    font-weight: normal;
+    @include rem(16px);
+    line-height: 1.625;
+	overflow-x: hidden;
+    // visibility: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: $heading_color;
+	font-family: $heading_family;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-top: 0;
+	a {
+		font-family: inherit;
+	}
+}
+
+h1 {
+	@include rem(36px);
+}
+
+h2 {
+	@include rem(30px);
+}
+
+h3 {
+	@include rem(24px);
+}
+
+h4 {
+	@include rem(20px);
+}
+
+h5, h6 {
+	@include rem(18px);
+}
+
+p {
+    margin-top: 0;
+	margin-bottom: $col_margin;
+	a {
+		font-family: inherit;
+	}
+	img {
+		margin: 0;
+	}
+	&.empty {
+		line-height: 0;
+		margin: 0;
+		padding: 0;
+	}
+}
+
+blockquote, cite, em, i {
+	font-style: italic;
+}
+
+b, strong {
+	font-weight: 700;
+    color: $heading_color;
+}
+
+small {
+	@include rem(12px);
+	line-height: 1.2;
+}
+
+/*  Blockquotes
+----------------------------------------------------------------------------- */
+blockquote {
+	@include clearfix();
+	background: $grey_light;
+    font-style: normal;
+	border-left: 5px solid $grey_regular;
+    margin: 0;
+	margin: {
+		bottom: $col_margin;
+	}
+	overflow: hidden;
+	padding: $col_margin $col_margin $col_margin $col_margin*2;
+	p {
+		margin-bottom: 0;
+        position: relative;
+        &:first-of-type {
+            &:before {
+                @include octicon("quote");
+                @extend .mega-octicon;
+                position: absolute;
+                left: -$col_margin;
+                top: 0;
+            }
+        }
+	}
+	cite {
+		display: block;
+		@include rem(12px);
+		&:before {
+			content: "\2014 \0020";
+		}
+		a {
+			&:visited {
+
+			}
+		}
+	}
+}
+
+/** Links
+----------------------------------------------------------------------------- */
+a {
+    @include transition(all, 200ms, linear);
+	color: $link;
+	text-decoration: none;
+	outline: none;
+	&:hover, &:focus {
+		color: $body_color;
+	}
+}
+
+/* Lists
+----------------------------------------------------------------------------- */
+ul {
+	list-style: disc;
+}
+
+ol {
+	list-style: decimal;
+}
+
+ol, ul {
+	padding-left: 0;
+	margin: {
+        top: 0;
+        left: $col_margin;
+		bottom: $col_margin;
+	}
+	li {
+		margin-bottom: 0;
+	}
+}
+
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+	margin: {
+		top: $col_margin/2;
+		right: 0;
+		bottom: $col_margin/2;
+		left: $col_margin;
+	}
+}
+
+/* Tables
+----------------------------------------------------------------------------- */
+table {
+	width:100%;
+    border: none;
+    margin-bottom: $col_margin;
+}
+
+thead {
+	tr {
+		background: $heading_color;
+		color: $light_color;
+		td {
+			padding: $col_margin/6;
+			text-align: left;
+		}
+		th {
+			padding: $col_margin/6;
+		}
+	}
+}
+
+tbody {
+	tr {
+		th {
+			padding: $col_margin/6;
+		}
+		th, td {
+			padding: $col_margin/6;
+			text-align: left;
+			// border-bottom: 1px solid $heading_color;
+		}
+		&:nth-child(odd) {
+			background: $light_color;
+		}
+		&:nth-child(even) {
+			background: $grey_light;
+		}
+	}
+}
+
+tfoot {
+	tr {
+		background: $heading_color;
+		color: $light_color;
+		td {
+			padding: $col_margin/6;
+			text-align: left;
+		}
+	}
+}
+
+/** Definition Lists
+----------------------------------------------------------------------------- */
+dl {
+	dt {
+		font-family: $heading_family;
+		font-weight: bold;
+		text-decoration: underline;
+	}
+	dd {
+		margin: 0;
+		padding: 0 0 $col_margin 0;
+	}
+}
+
+/** Preformatted Tags
+----------------------------------------------------------------------------- */
+code, samp, kbd, pre, tt {
+	color: $body_color;
+	font-family: "Courier New", Courier, monospace, sans-serif;
+	text-align: left;
+}
+
+pre {
+	border-left: $col_margin/2 solid $grey_regular;
+	@include rem(12px);
+	margin: $col_margin/2 0 $col_margin/2 $col_margin;
+	overflow: auto;
+	padding: $col_margin/2;
+	code {
+		@include rem(12px);
+		line-height: 1;
+	}
+}
+
+/* target IE7 and IE6 */
+* {
+	&:first-child {
+		&+html {
+			pre {
+				overflow-y: hidden;
+				overflow: visible;
+				overflow-x: auto;
+				padding-bottom: 24px;
+			}
+		}
+	}
+	html {
+		pre {
+			padding-bottom: $col_margin;
+			overflow: visible;
+			overflow-x: auto;
+		}
+	}
+}
+
+/** Other Tags
+----------------------------------------------------------------------------- */
+cite {
+	&:before {
+		content: '\2014';
+		margin-right: $col_margin/6;
+	}
+}
+
+sup {
+	font-size: xx-small;
+	vertical-align: top;
+}
+
+sub {
+	font-size: xx-small;
+	vertical-align: bottom;
+}
+
+/** Images, Objects
+----------------------------------------------------------------------------- */
+embed, iframe, img, object, video, .wp-caption {
+	max-width: 100%;
+}
+
+img {
+	display: block;
+	height: auto;
+	max-width: 100%;
+    // image-rendering: optimizeSpeed;
+	.featured-content &, .gallery & {
+		width: auto;
+	}
+}
+
+a {
+	&.imgwrap {
+		border: none;
+		background: none;
+		&:hover {
+			border:none;
+			background:none;
+		}
+	}
+}
+
+/** Buttons
+----------------------------------------------------------------------------- */
+.button,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+	@include transition(all, 200ms, linear);
+    @include btn();
+    border: 0;
+    color: $light_color;
+	font-family: $heading_family;
+    @include rem(16px);
+    &:hover {
+        background: $link;
+        cursor: pointer;
+    }
+    &:focus {
+    	outline: none;
+    }
+}
+
+/* Fix for odd Mozilla border & padding issues */
+button::-moz-focus-inner, input::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+
+/* Forms
+----------------------------------------------------------------------------- */
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+textarea,
+select {
+    @include border-radius(0px);
+    @include rem(14px);
+	height: 38px;
+	padding: 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
+	background-color: $grey_light;
+	border: 1px solid $grey_regular;
+	box-shadow: none;
+	box-sizing: border-box;
+	font-family: $body_family;
+	width: 100%;
+	&:focus {
+		border-color: $grey_regular;
+  		outline: 0;
+	}
+}
+
+/* Removes awkward default styles on some inputs for iOS */
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+button,
+textarea {
+	@include css3(appearance, none);
+}
+
+textarea {
+	min-height: 100px;
+	padding-top: 6px;
+	padding-bottom: 6px;
+}
+
+label,
+legend {
+	font-family: $heading_family;
+	display: block;
+	margin-bottom: 5px;
+}
+
+fieldset {
+	padding: 0;
+	border-width: 0;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+	display: inline;
+}

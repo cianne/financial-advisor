@@ -1,0 +1,256 @@
+/** Posts
+----------------------------------------------------------------------------- */
+.entry {
+	@include clearfix;
+	margin-bottom: $col_margin;
+	padding-bottom: $col_margin;
+	border-bottom: 1px solid $grey_regular;
+	.single &, .page & {
+		margin-bottom: $col_margin;
+		padding-bottom: 0;
+		border-bottom: 0;
+	}
+	.archive &, .search &, .blog &, .home & {
+		margin-bottom: $col_margin;
+		padding-bottom: $col_margin;
+		border-bottom: 1px solid $grey_regular;
+	}
+	.imgwrap {
+		// @include border-radius(5px);
+		display: block;
+		margin-bottom: $col_margin;
+		overflow: hidden;
+	}
+
+	.entry-header {
+		margin-bottom: 24px;
+		.entry-title {
+			margin-bottom: 10px;
+			a {
+				font-weight: 300;
+				@include rem(25);
+				color: $heading_color;
+				&:hover {
+					color: $link;
+				}
+			}
+		}
+		.imgwrap{
+			display: inline;
+			img{
+				margin-right: 38px;
+				margin-bottom: 0;
+			}
+		}
+		.entry-meta {
+			color: $link;
+			margin-bottom: 0;
+			@include rem(16px);
+			font-weight: 300;
+			& > * {
+				margin-right: 10px;
+				&:before {
+					// padding-right: 5px;
+				}
+				&:last-child {
+					margin-right: 0;
+				}
+			}
+			.entry-time {
+				margin-left: 0;
+				&:before {
+					// @include genericon(time);
+				}
+			}
+			.entry-author {
+				&:before {
+					// @include genericon(user);
+				}
+			}
+			.entry-comments-link {
+				&:before {
+					// @include genericon(comment);
+				}
+			}
+			a {
+				color: $secondary_color;
+				&:hover {
+					color: $link;
+				}
+			}
+		}
+	}
+	.entry-content {
+		@include clearfix;
+		// margin-bottom: $col_margin;
+		
+		.page-template-page_blog & p:not(:nth-child(1)),
+		.blog & pp:not(:nth-child(1)){
+			margin-bottom: 0
+		}
+
+		.more-link {
+			color: $light_color;
+			font-size: 16px;
+			display: inline-block;
+			padding: 10px 30px;
+			background-color: $link;
+		}
+
+
+	}
+	.entry-footer {
+		color: $secondary_color;
+		@include rem(14px);
+		.entry-meta {
+			margin-bottom: 0;
+			span {
+				display: block;
+			}
+			a {
+				color: $link;
+				&:hover {
+					color: $link_hover;
+				}
+			}
+		}
+	}
+}
+
+/** Comments **/
+.entry-comments {
+	h3 {
+		margin-bottom: $col_margin;
+	}
+	margin-bottom: $col_margin;
+	.comment-list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		article {
+			margin-bottom: $col_margin;
+		}
+		.comment-header {
+			margin-bottom: $col_margin;
+			p {
+				margin-bottom: 0;
+				&.comment-author {
+					font-family: $heading_family;
+					img {
+						@include css3(border-radius,50%);
+						float: left;
+						margin-right: $col_margin;
+					}
+					span {
+						text-transform: uppercase;
+						&.says {
+							// display: none;
+							font-family: $body_family;
+							text-transform: none;
+						}
+					}
+					a {
+						color: $link;
+						&:hover {
+							color: $body_color;
+						}
+					}
+				}
+				&.comment-meta {
+					@include rem(14px);
+					a {
+						// color: $secondary_color;
+						color: $link;
+						&:hover {
+							// color: $link;
+							color: $body_color;
+						}
+					}
+				}
+			}
+		}
+		.comment-content {
+
+		}
+		.comment-reply {
+			.comment-reply-link {
+				// @include btn();
+				&:before {
+					// @include genericon(reply);
+					// padding-right: 5px;
+				}
+			}
+		}
+		.children {
+			list-style: none;
+			margin-left: $col_margin;
+		}
+	}
+}
+
+/** Comment Forms **/
+.comment-respond {
+	form {
+		p {
+			margin-bottom: ($col_margin/2);
+		}
+		input[type="text"], input[type="email"], input[type="url"], textarea {
+			&:not(textarea) {
+				width: 50%;
+				@include mobile {
+					width: 100%;
+				}
+			}
+			border-color: darken($grey_light, 10);
+		}
+	}
+}
+
+/** Pingbacks **/
+.entry-pings {
+	.ping-list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		.pingback {
+			margin-bottom: $col_margin;
+			.comment-meta {
+				margin-bottom: $col_margin;
+			}
+			.reply {
+				.comment-reply-link {
+					// @include btn();
+					&:before {
+						// @include genericon(reply);
+						padding-right: $col_margin/2;
+					}
+				}
+			}
+		}
+		.children {
+			list-style: none;
+			margin-left: $col_margin;
+		}
+	}
+	.comment-metadata {
+		@include rem(14px);
+		a {
+			color: $secondary_color;
+			&:hover {
+				color: $link;
+			}
+		}
+	}
+}
+/** page **/
+
+.page{
+	.entry-header{
+		margin-bottom: 34px;
+		h1.entry-title{
+			@include rem(26);
+			text-transform: uppercase;
+			margin-bottom: 0;
+		}
+	}
+}

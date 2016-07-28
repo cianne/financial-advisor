@@ -1,0 +1,70 @@
+/** Content Boxes
+----------------------------------------------------------------------------- */
+.content-box-blue {
+	background: #5D9CEC;
+	border: 1px solid #4A89DC;
+	margin-bottom: $col_margin;
+	padding: $col_margin;
+}
+
+.content-box-gray {
+	background: #CCD1D9;
+	border: 1px solid #AAB2BD;
+	margin-bottom: $col_margin;
+	padding: $col_margin;
+}
+
+.content-box-green {
+	background: #A0D468;
+	border: 1px solid #8CC152;
+	margin-bottom: $col_margin;
+	padding: $col_margin;
+}
+
+.content-box-purple {
+	background: #EC87C0;
+	border: 1px solid #D770AD;
+	margin-bottom: $col_margin;
+	padding: $col_margin;
+}
+
+.content-box-red {
+	background: #ED5565;
+	border: 1px solid #DA4453;
+	margin-bottom: $col_margin;
+	padding: $col_margin;
+}
+
+.content-box-yellow {
+	background: #FFCE54;
+	border: 1px solid #F6BB42;
+	margin-bottom: $col_margin;
+	padding: $col_margin;
+}
+
+/** Button Shortcode
+----------------------------------------------------------------------------- */
+.btn {
+    text-align: center;
+    &.flat {
+        @include btn('flat', $heading_color, 0px, 15px 30px);
+    }
+    &.rounded {
+        @include btn('flat', $heading_color, 5px, 15px 30px);
+    }
+    &.border {
+        @include btn('border', $heading_color, 0px, 15px 30px);
+    }
+    &.pressed {
+        @include btn('pressed', $heading_color, 0px, 15px 30px);
+    }
+}
+
+/** Phone Shortcode
+----------------------------------------------------------------------------- */
+.phone {
+    &:before {
+        // @include fa('phone');
+        padding-right: 10px;
+    }
+}

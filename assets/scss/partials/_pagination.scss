@@ -1,0 +1,76 @@
+/** Pagination
+----------------------------------------------------------------------------- */
+.pagination, .navigation {
+	@include clearfix();
+	text-align: center;
+	ul {
+		font-size: 0;
+		float: left;
+		line-height: 1;
+		margin: 0;
+		padding: 0;
+		li {
+			@include rem(14px);
+			// margin-left: -4px;
+			display: inline-block;
+			margin-right: $half_gutter;
+			&:first-child {
+				margin-left: 0;
+			}
+			a {
+				@include btn('flat', $heading_color);
+				&:hover, &:active {
+					background: $link;
+				}
+			}
+			&.active {
+				a {
+					background: $link;
+				}
+			}
+		}
+	}
+	div {
+		&.alignleft,
+		&.alignright {
+			margin-bottom: 0;
+		}
+		a {
+			@include btn('flat', $heading_color);
+		}
+	}
+}
+
+/** Entry Pagination */
+.entry-pagination {
+	& > *, a {
+		@include btn();
+		display: inline;
+		margin: {
+			top: 0;
+			right: ($gutter_width/2);
+			bottom: 0;
+			left: ($gutter_width/2);
+		}
+	}
+}
+
+/** Single Post Navigation */
+.prev_next {
+	@include clearfix();
+	a {
+		@include btn();
+	}
+}
+
+/** Archive Pagination */
+.archive-pagination {
+	div {
+		a {
+			@include btn('flat', $heading_color);
+			&:hover {
+				background-color: $link;
+			}
+		}
+	}
+}

@@ -1,0 +1,208 @@
+/** Layout
+----------------------------------------------------------------------------- */
+/** Site Container */
+.site-container {
+	// background: $light_color;
+	// margin: 0 auto;
+	max-width: 100%;
+	overflow-x: hidden;
+	.boxed & {
+		max-width: 1170px;
+		// padding: 0 $col_margin/2;
+		@include desktop {
+			max-width: 970px;
+		}
+		@include tablet {
+			max-width: 750px;
+		}
+		@include mobile {
+			max-width: 480px;
+		}
+		@include legacy {
+			max-width: 90.625%;
+		}
+	}
+}
+
+.wrap {
+	@include row();
+	@include desktop {
+		max-width: 940px;
+	}
+	@include tablet {
+		max-width: 720px;
+	}
+	@include mobile {
+		max-width: 450px;
+	}
+	@include legacy {
+		max-width: 90.625%;
+	}
+	.boxed & {
+		max-width: 100%;
+		padding: 0 $col_margin/2;
+	}
+}
+/** Site Header */
+.site-header {
+	.title-area {
+		width: 28.63842%;
+		float: left;
+		@include first;
+		
+
+		@include tablet {
+			@include column(10);
+			@include first;
+		}
+	}
+	.nav-primary {
+		width: 68.81921%;
+		float: left;
+		margin-left: 0;
+		// @include last;
+		@include tablet{
+			@include column(12);
+			@include first;
+		}
+	}
+}
+
+/** Site Navigation */
+.nav-primary {
+
+}
+
+/** Site Inner */
+.site-inner {
+	.content-sidebar-wrap {
+		@include clearfix;
+		.content-sidebar-sidebar & {
+			@include column(10);
+			@include first;
+			@include mobile {
+				@include column(12);
+				@include first;
+			}
+		}
+		.sidebar-content-sidebar &, .sidebar-sidebar-content & {
+			@include column(10);
+			@include last;
+			@include mobile {
+				@include column(12);
+				@include first;
+			}
+		}
+		.content {
+			@include column(8);
+			@include first;
+			@include mobile {
+	            @include column(12);
+	            @include first;
+	        }
+			.sidebar-content-sidebar &, .content-sidebar-sidebar &, .sidebar-sidebar-content & {
+				@include column(8);
+				@include mobile {
+		            @include column(12);
+		            @include first;
+		        }
+			}
+			.sidebar-content-sidebar &, .content-sidebar-sidebar & {
+				@include first;
+			}
+			.sidebar-content &, .sidebar-sidebar-content & {
+				@include column(8);
+				@include last;
+				@include mobile {
+		            @include column(12);
+		            @include first;
+		        }
+			}
+			.full-width-content & {
+				@include column(12);
+				@include first;
+				@include mobile {
+		            @include column(12);
+		            @include first;
+		        }
+			}
+		}
+		.sidebar-primary {
+			@include column(4);
+			@include last;
+			@include mobile {
+	            @include column(12);
+	            @include first;
+	        }
+			.sidebar-content &, .sidebar-sidebar-content & {
+				@include column(4);
+				@include first;
+				@include mobile {
+		            @include column(12);
+		            // @include first;
+		        }
+			}
+			.sidebar-content-sidebar & {
+				// @include last;
+			}
+		}
+	}
+	.sidebar-secondary {
+		@include column(2);
+		@include last;
+		@include mobile {
+            @include column(12);
+            @include first;
+        }
+		.sidebar-sidebar-content &, .sidebar-content-sidebar & {
+			@include column(2);
+			@include first;
+			@include mobile {
+	            @include column(12);
+	            @include first;
+	        }
+		}
+	}
+}
+
+/** Footer Widgets */
+.footer-widgets {
+	.widget-area {
+		@include column(4);
+		@include mobile {
+            @include column(12);
+            @include first;
+        }
+		&.footer-widgets-1 {
+			@include first;
+		}
+	}
+}
+
+/** Site Footer */
+.site-footer {
+	.copyright, .widget-area {
+		@include column(6);
+		@include mobile {
+            @include column(12);
+            @include first;
+        }
+	}
+	.copyright {
+		@include first;
+	}
+    &.full-width .copyright {
+        @include column(12);
+    }
+}
+
+/** Mobile Header */
+.mobile-header {
+    .mobile-title-area {
+        @include column(8);
+        @include first;
+    }
+    .widget-area {
+        @include column(4);
+    }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "financial",
+  "version": "1.0",
+  "dependencies": {
+    "modernizr": "~2.8.3",
+    "fitvids": "~1.1.0",
+    "anijs": "~0.9.3",
+    "packery": "https://github.com/metafizzy/packery.git#~1.4.1",
+    "easytabs": "~3.2.0",
+    "owl-carousel": "~1.3.2",
+    "font-awesome": "~4.3.0",
+    "velocity": "~1.2.2",
+    "fancybox": "~2.1.5",
+    "animate.css": "^3.5.2"
+  },
+  "private": true
+}

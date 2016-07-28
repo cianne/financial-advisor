@@ -1,0 +1,59 @@
+/* math magic */
+$col_width: ($width - ($col_margin * ($columns - 1))) / $columns;
+$col_total_width: $col_width + $col_margin;
+
+/* create row div */
+@mixin row() {
+	// float: left;
+	// clear: both;
+	margin: {
+		right: auto;
+		left: auto;
+	}
+	max-width: $width;
+}
+
+/* create a column div */
+@mixin column($n: 1) {
+	@include span($n);
+	@include border-box();
+	float: left;
+}
+
+/* make an element span n columns */
+@mixin span($n: 1) {
+	// width: strip-unit(($n * $col_width) + (($n - 1) * $col_margin)/$width);
+	// width: ($n * $col_width) + (($n - 1) * $col_margin);
+	width: ((strip-unit(($n * $col_width) + (($n - 1) * $col_margin))/strip-unit($width))*100) + 0%;
+	@if $n == $columns {
+		margin-left: 0;
+	} @else {
+		margin-left: ((strip-unit($col_margin)/strip-unit($width))*100) + 0%;
+	}
+}
+
+/* the last column in a row needs this */
+@mixin last() {
+	float: right;
+	// margin-right: 0;
+}
+
+@mixin first() {
+	clear: left;
+	margin-left: 0;
+}
+
+@mixin revert {
+	clear: none;
+	margin-left: ((strip-unit($col_margin)/strip-unit($width))*100) + 0%;
+}
+
+/* prepend n blank columns  */
+@mixin prepend($n: 1) {
+	margin-left: $col_total_width * $n;
+}
+
+/* append n blank columns */
+@mixin append($n: 1) {
+	margin-right: $col_total_width * $n + $col_margin;
+}

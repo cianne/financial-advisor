@@ -1,0 +1,397 @@
+a {
+    color: @color;
+}
+
+::-moz-selection {
+    background: @color;
+}
+
+::selection {
+    background: @color;
+}
+
+// Content
+.entry {
+    .entry-header {
+        .entry-title {
+            a {
+                &:hover {
+                    color: @color;
+                }
+            }
+        }
+        .entry-meta {
+            a {
+                &:hover {
+                    color: @color;
+                }
+            }
+        }
+    }
+    .entry-footer {
+        .entry-meta {
+            a {
+                color: @color;
+            }
+        }
+    }
+}
+
+// Comments
+.entry-comments {
+    .comment-list {
+        .comment-header {
+            p {
+                &.comment-author {
+                    a {
+                        color: @color;
+                    }
+                    span {
+                        &.says {
+                            font-family: @body_font;
+                            font-weight: @body_weight;
+                            font-style: @body_style;
+                        }
+                    }
+                }
+                &.comment-meta {
+                    a {
+                        color: @color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.entry-pings {
+    .comment-metadata {
+        a {
+            &:hover {
+                color: @color;
+            }
+        }
+    }
+}
+
+// Navigation
+.genesis-nav-menu {
+    .menu-item {
+        a {
+            &:hover {
+                background: @color;
+            }
+        }
+        &.current-item-has-children, &.current-menu-item, &.current_page_item {
+            & > a {
+                background: @color;
+            }
+        }
+        .sub-menu {
+            a {
+                &:hover {
+                    background: @color;
+                }
+            }
+            .menu-item-has-children {
+                &:hover {
+                    & > a {
+                        background: @color;
+                    }
+                }
+            }
+            & > .current-menu-item, & > .current_page_item {
+                & > a {
+                    background: @color;
+                }
+            }
+        }
+    }
+    & > .menu-item-has-children {
+        &:hover {
+            background: @color;
+            & > a {
+                background: @color;
+            }
+        }
+    }
+}
+
+// Pagination
+.navigation, .pagination {
+    ul {
+        li {
+            a {
+                &:active, &:hover {
+                    background: @color;
+                }
+            }
+            &.active {
+                a {
+                    background: @color;
+                }
+            }
+        }
+    }
+}
+
+// Widgets
+.widget_recent_entries {
+    li {
+        a{
+            &:hover {
+                color: @color;
+            }
+        }
+        span {
+            font-family: @body_font;
+            font-weight: @body_weight;
+            font-style: @body_style;
+        }
+    }
+}
+
+.widget_tag_cloud {
+    .tagcloud {
+        a {
+            &:hover {
+                background: @color;
+            }
+        }
+    }
+}
+
+.widget_recent_comments {
+    ul {
+        li {
+            a {
+                &:hover {
+                    color: @color;
+                }
+            }
+        }
+    }
+}
+
+.widget_categories, .widget_archive {
+    ul {
+        li {
+            a {
+                &:hover {
+                    color: @color;
+                }
+            }
+        }
+    }
+}
+
+// Footer Widget Area
+.footer-widgets {
+    .widget {
+        ul {
+            li {
+                a {
+                    &:hover {
+                        color: @color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Site Header
+.site-header {
+    .title-area {
+        .site-description {
+            font-family: @body_font;
+            font-weight: @body_weight;
+            font-style: @body_style;
+        }
+    }
+}
+
+// Footer
+.site-footer {
+    a {
+        color: @color;
+    }
+}
+
+// Gototop
+.gototop {
+    // background: @color;
+    // color: @color;
+    &:hover {
+        background: @color;
+    }
+}
+
+// Fonts
+body, input[type="email"], input[type="number"], input[type="search"], input[type="text"], input[type="tel"], input[type="url"], input[type="password"], textarea, select {
+    font-family: @body_font;
+    font-weight: @body_weight;
+    font-style: @body_style;
+}
+
+.button, button, input[type="submit"], input[type="reset"], input[type="button"] {
+    &:hover {
+        background: @color;
+    }
+}
+
+h1, h2, h3, h4, h5, h6, label, legend, .button, button, input[type="submit"], input[type="reset"], input[type="button"] {
+    font-family: @heading_font;
+    font-weight: @heading_weight;
+    font-style: @heading_style;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    a {
+        font-family: @heading_font;
+    }
+}
+
+dl {
+    dt {
+        font-family: @heading_font;
+        font-weight: @heading_weight;
+        font-style: @heading_style;
+    }
+}
+
+.entry-comments {
+    .comment-list {
+        .comment-header {
+            p {
+                &.comment-author {
+                    font-family: @heading_font;
+                    font-weight: @heading_weight;
+                    font-style: @heading_style;
+                }
+            }
+        }
+    }
+}
+
+// Widgets
+.widget_recent_entries {
+    li {
+        a {
+            font-family: @heading_font;
+            font-weight: @heading_weight;
+            font-style: @heading_style;
+        }
+    }
+}
+
+.widget_calendar {
+	#wp-calendar {
+		caption {
+            font-family: @heading_font;
+            font-weight: @heading_weight;
+            font-style: @heading_style;
+        }
+    }
+}
+
+.widget {
+    &.widget_mb_masonry {
+        .item {
+            .post-content {
+                .post-details {
+                    h2 {
+                        a {
+                            &:hover {
+                                color: @color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.widget_mb_button {
+        .btn {
+            &.flat {
+                background-color: @color;
+                &:hover {
+                    background-color: darken(@color, 10%);
+                }
+            }
+            &.rounded {
+                // @include btn('flat', $link, 5px, 15px 30px);
+                background-color: @color;
+                &:hover {
+                    background-color: darken(@color, 10%);
+                }
+            }
+            &.border {
+                // @include btn('border', $link, 0px, 15px 30px);
+                border-color: @color;
+                color: @color;
+                &:hover {
+                    background-color: darken(@color, 10%);
+                }
+            }
+        }
+    }
+    &.widget_mb_social_icons {
+        ul {
+            li {
+                a {
+                    span {
+                    }
+                    &.flat {
+                        span {
+                            background-color: @color;
+                            &:hover {
+                                background-color: darken(@color, 10%);
+                            }
+                        }
+                    }
+                    &.rounded {
+                        span {
+                            // @include btn('flat', $link, 5px, 0px);
+                            background-color: @color;
+                            &:hover {
+                                background-color: darken(@color, 10%);
+                            }
+                        }
+                    }
+                    &.border {
+                        span {
+                            // @include btn('border', $link, 0px, 0px);
+                            border-color: @color;
+                            color: @color;
+                            &:hover {
+                                background-color: darken(@color, 10%);
+                            }
+                        }
+                    }
+                    &.circular {
+                        span {
+                            // @include btn('flat', $link, 50%, 0px);
+                            background-color: @color;
+                            &:hover {
+                                background-color: darken(@color, 10%);
+                            }
+                        }
+                    }
+                }
+            }
+            &.social-with-text {
+                li {
+                    margin-right: 0;
+                    display: block;
+                    a {
+                        display: inline-block;
+                        span {
+                            margin-right: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

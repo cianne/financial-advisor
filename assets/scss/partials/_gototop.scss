@@ -1,0 +1,34 @@
+/** Go To Top
+----------------------------------------------------------------------------- */
+.gototop, .gotobottom {
+	// @include border-top-radius(5px);
+	// background-color: $body_color;
+	background-color: $link;
+	color: $light_color;
+	cursor: pointer;
+	display: none;
+	// display: block;
+	// line-height: 48px;
+	// width: 48px;
+	// height: 48px;
+	// line-height: 48px;
+	line-height: 1;
+	font-size: inherit;
+	position: fixed;
+	padding: 10px 15px;
+	text-align: center;
+	vertical-align: middle;
+	// bottom: 63px;
+	bottom: $col_margin/2;
+	right: $col_margin/2;
+	&.top {
+		display: block;
+	}
+	&:hover {
+		background-color: darken($link,10);
+	}
+}
+
+.gotobottom {
+	bottom: $col_margin/2;
+}
